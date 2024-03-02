@@ -25,3 +25,10 @@ services:
       - redis
     depends_on:
       - redis
+
+  celery-beats:
+    build:
+      context: .
+    volumes:
+      - ./pokemon_app:/pokemon_app
+    command: ['celery', '--workdir=.', '-A', 'pokemon_app', 'beat', '-l', 'INFO', '--scheduler', 'django_celery_beat.schedulers:DatabaseScheduler']

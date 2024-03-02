@@ -11,6 +11,7 @@ app.config_from_object('django.conf:settings', namespace='CELERY')
 app.conf.broker_url = settings.CELERY_BROKER_URL
 app.autodiscover_tasks()
 
+
 @app.task()
 def task():
     print('Hello from task')
