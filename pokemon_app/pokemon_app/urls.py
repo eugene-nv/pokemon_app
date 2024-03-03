@@ -26,6 +26,8 @@ urlpatterns = [
     path('', include('pokemon.urls')),
     path('arena/', include('arena.urls')),
 
+    path('api/', include('api.urls')),
+
     path('users/', include('users.urls'))
 ]
 
