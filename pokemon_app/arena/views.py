@@ -1,12 +1,35 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+
 from django.views.generic import ListView
-from pokemon.models import Pokemon
-from .models import Arena
-from .servises.battle import CreateBattle, Battle
+
+from .models import Arena, Log
+from .servises.servises import ForTask
 
 
-def battle_main(request):
-    create = Battle(request.user)
-    create.battle()
+class ArenaView(ListView):
+    template_name = 'arena/arena.html'
+    context_object_name = 'result'
 
-    return render(request, 'battle/battle.html', {'create': create})
+    def get_queryset(self):
+        return Arena.objects.all()
+
+
+def show_battle_result(request, battle_id):
+    result = get_object_or_404(Arena, pk=battle_id)
+    log = Log.objects.filter(battle_id=battle_id)
+
+    context = {
+        'result': result,
+        'log': log,
+    }
+
+    return render(request, 'arena/battle_result.html', context=context)
+
+
+def battle_test(request):
+
+    test = ForTask()
+    test.run()
+
+
+    return render(request, 'arena/battle.html', {'create': 'x'})

@@ -13,6 +13,9 @@
     {% if user.is_authenticated %}
             <a class="inline-block rounded-lg py-2 px-4 hover:bg-slate-100 hover:text-slate-900" href="{% url 'home' %}">Главная страница</a>
             <a class="inline-block rounded-lg py-2 px-4 hover:bg-slate-100 hover:text-slate-900" href="{% url 'pokemons' %}">Мои покемоны</a>
+            <a class="inline-block rounded-lg py-2 px-4 hover:bg-slate-100 hover:text-slate-900" href="{% url 'arena' %}">Арена</a>
+
+
             <p class="py-2 px-4">{{ user }}</p>
             <form action="{% url 'logout' %}" method="post">
                 {% csrf_token %}

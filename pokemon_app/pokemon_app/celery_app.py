@@ -14,4 +14,6 @@ app.autodiscover_tasks()
 
 @app.task()
 def task():
-    print('Hello from task')
+    from arena.servises.servises import ForTask
+    t = ForTask()
+    t.run()
