@@ -9,10 +9,11 @@ from users.models import User
 class Logging:
     @classmethod
     def log(cls, battle, action):
-        Log.objects.create(
+        log = Log.objects.create(
             battle=battle,
             action=action,
         )
+        return log
 
 
 class BeforeBattle:
@@ -50,11 +51,10 @@ class AfterBattle(BeforeBattle):
         self.start_first_hp = self.battle.first_pokemon.hp
         self.start_second_hp = self.battle.second_pokemon.hp
 
-    def set_start_hp(self, first, second):
-        first.hp = self.start_first_hp
-        first.save()
-        second.hp = self.start_second_hp
-        second.save()
+    def set_start_hp(self):
+        self.battle.first_pokemon.hp = self.start_first_hp
+        self.battle.second_pokemon.hp = self.start_second_hp
+        self.battle.save()
 
     def set_battle_result(self, result):
         self.battle.result = result.name
@@ -93,7 +93,7 @@ class Battle(AfterBattle):
                     Logging.log(self.battle, action)
                     LevelUp.add_experience(first)
                     self.set_battle_result(first)
-                    self.set_start_hp(first, second)
+                    self.set_start_hp()
                     break
             else:
                 print(f'{second.name} выйграл')
@@ -101,7 +101,7 @@ class Battle(AfterBattle):
                 Logging.log(self.battle, action)
                 LevelUp.add_experience(second)
                 self.set_battle_result(second)
-                self.set_start_hp(first, second)
+                self.set_start_hp()
                 break
 
 

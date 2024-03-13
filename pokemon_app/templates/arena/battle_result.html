@@ -5,9 +5,9 @@
 
     <div class="flex flex-nowrap justify-center">
         <div class="px-8 pt-8 my-8 mx-32 border-4 border-red-600/50 rounded-lg bg-yellow-50 h-max grid justify-items-center">
-            <p><img class="h-72 w-48 object-cover rounded-lg" src="{{result.owner_pokemon.portrait.url}}" alt="img"></p>
-            <p class="pt-4 text-red-600">{{result.owner_pokemon.name}}</p>
-            <p class="pb-4">{{result.owner_pokemon.level}} уровня</p>
+            <p><img class="h-72 w-48 object-cover rounded-lg" src="{{result.first_pokemon.portrait.url}}" alt="img"></p>
+            <p class="pt-4 text-red-600">{{result.first_pokemon.name}}</p>
+            <p class="pb-4">{{result.first_pokemon.level}} уровня</p>
         </div>
         <div class="">
             {% for l in log %}
@@ -17,9 +17,9 @@
 
         </div>
         <div class="px-8 pt-8 my-8 mx-32 border-4 border-red-600/50 rounded-lg bg-yellow-50 h-max grid justify-items-center">
-            <p><img class="h-72 w-48 object-cover rounded-lg" src="{{result.enemy_pokemon.portrait.url}}" alt="img"></p>
-            <p class="pt-4 text-red-600">{{result.enemy_pokemon.name}}</p>
-            <p class="flex py-4">{{ result.enemy_pokemon.kind }}</p>
+            <p><img class="h-72 w-48 object-cover rounded-lg" src="{{result.second_pokemon.portrait.url}}" alt="img"></p>
+            <p class="pt-4 text-red-600">{{result.second_pokemon.name}}</p>
+            <p class="flex py-4">{{ result.second_pokemon.kind }}</p>
         </div>
     </div>
 

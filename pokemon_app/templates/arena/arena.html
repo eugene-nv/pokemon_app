@@ -13,8 +13,9 @@
           {% for r in result %}
       <tbody>
         <tr class="bg-white border-b">
-          <td scope="col" class="px-6 py-3">{{r.owner_pokemon.name}}</td>
-          <td scope="col" class="px-6 py-3">{{r.enemy_pokemon.name}}</td>
+          <td scope="col" class="px-6 py-3">{{r.id}}</td>
+          <td scope="col" class="px-6 py-3">{{r.first_pokemon.name}}</td>
+          <td scope="col" class="px-6 py-3">{{r.second_pokemon.name}}</td>
           <td scope="col" class="px-6 py-3">Победитель: {{r.result}}</td>
           <td>
               <a class="font-medium text-red-600 dark:text-red-500 hover:underline" href="{% url 'show_battle_result' r.pk %}">Результат</a>
