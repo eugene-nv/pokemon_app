@@ -1,16 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<!--<div class="flex flex-wrap">-->
-<!--    {% for pokemon in pokemons %}-->
-<!--    <div class="px-4 pt-4 m-8 border-4 border-red-600/50 rounded-lg hover:bg-yellow-50" >-->
-<!--        <p><img class="h-72 w-48 object-cover rounded-lg" src="{{pokemon.portrait.url}}" alt="img"></p><br>-->
-<!--        <a class="underline underline-offset-2 font-semibold text-red-700 hover:text-red-500 justify-center flex">{{ pokemon.name }}</a>-->
-<!--    </div>-->
-<!--    {% endfor %}-->
-<!--</div>-->
-
-<div>
     <h1>Home page</h1>
-</div>
+    <p>Это очень простой сайт где вы можете поймать покемона =)</p><br>
+    <p>Каждый покемон может учавствовать в боях на арене. Бои происходят астоматически каждые 24 часа. Результаты можно посмотреть на странице арены.</p><br><br>
+
+    <h1 class="font-medium text-red-600 hover:underline">Зарегистрируйтесь</h1>
+    <p>если вы здесь первый раз или</p>
+    <a class="font-medium text-red-600 hover:underline" href="{% url 'login' %}">
+                Войдите
+    </a>
+    <p>если у вас есть аккаунт.</p>
+
 {% endblock content %}

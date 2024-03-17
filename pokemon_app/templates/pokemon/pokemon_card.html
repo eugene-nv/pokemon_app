@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div class="m-16 p-4 flex flex-row border-4 border-red-600/50 rounded-lg bg-yellow-50">
+<div class="m-16 p-4">
     <div class="flex flex-nowrap justify-center">
         <p><img class="h-144 w-96 object-cover rounded-lg" src="{{pokemon.portrait.url}}" alt="img"></p>
         <div class="px-8">
@@ -10,11 +10,7 @@
 
                 <p>{{ pokemon.level }} уровень</p><br>
                 <p>Здоровье: {{ pokemon.hp }}</p><br>
-                <p class="font-semibold">Характеристики:</p><br>
-                <p>Сила {{ pokemon.strength }}</p>
-                <p>Телосложение {{ pokemon.constitution }}</p>
-
-                <p>Опыт {{ pokemon.experience }}</p><br>
+                <p>Опыт {{ pokemon.experience }}</p><br><br><br><br><br>
 
                             <form action="{% url 'delete_pokemon' pokemon.pk %}" method="post">
                                 {% csrf_token %}

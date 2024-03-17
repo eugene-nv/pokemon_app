@@ -14,7 +14,7 @@
 
 <div class="flex flex-wrap">
 {% for pokemon in pokemons %}
-    <div class="px-4 pt-4 m-8 border-4 border-red-600/50 rounded-lg hover:bg-yellow-50" >
+    <div class="px-4 pt-4 m-8" >
         <p><img class="box-border h-44 w-44" src="{{pokemon.portrait.url}}"  alt="img"></p><br>
         <a class="font-semibold text-red-700 hover:underline underline-offset-2 text-red-500 justify-center flex" href="{% url 'show_pokemon' pokemon.pk %}">{{ pokemon.name }}</a>
 

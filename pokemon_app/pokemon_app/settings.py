@@ -30,8 +30,8 @@ CSRF_TRUSTED_ORIGINS = ['http://*', 'https://*', 'https://*.retailiqa.ru/']
 CORS_ALLOW_ALL_ORIGINS = True
 
 AUTH_USER_MODEL = 'users.User'
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/pokemon/'
+LOGOUT_REDIRECT_URL = '/users/login/'
 
 
 # Application definitions

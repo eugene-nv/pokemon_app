@@ -31,5 +31,4 @@ def battle_test(request):
     test = ForTask()
     test.run()
 
-
-    return render(request, 'arena/battle.html', {'create': 'x'})
+    return render(request, 'arena/battle.html')

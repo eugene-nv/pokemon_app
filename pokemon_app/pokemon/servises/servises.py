@@ -1,15 +1,14 @@
 import random
 
 from pokemon.models import Pokemon
-
-pokemon_list = ('Пикачу', 'Бульбазавр', 'Чармандер', 'Сквиртл')
+from .names import names
 
 
 class CreatePokemon:
     def __init__(self, user):
         self.user = user
-        self.name = random.choice(pokemon_list)
-        self.portrait = f'portrait/{self.name.lower()}.jpeg'
+        self.name = random.choice(names)
+        self.portrait = f'portrait/{self.name}.png'
         self.experience = 0
         self.level = 1
         self.strength = random.randint(8, 12)
