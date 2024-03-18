@@ -15,7 +15,10 @@ def start(request):
 
 
 def home(request):
-    return render(request, 'pokemon/home.html')
+    if request.user.is_authenticated:
+        return redirect('pokemons')
+    else:
+        return render(request, 'pokemon/home.html')
 
 
 class OwnerPokemonViews(ListView):
