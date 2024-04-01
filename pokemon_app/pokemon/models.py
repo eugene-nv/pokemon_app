@@ -18,8 +18,8 @@ class Pokemon(models.Model):
     strength = models.IntegerField(verbose_name='Сила', blank=True, null=True)
     constitution = models.IntegerField(verbose_name='Телосложение', blank=True, null=True)
 
-    def __str__(self):
-        return f'{self.name}'
+    # def __str__(self):
+    #     return f'{self.name}'
 
     class Meta:
         verbose_name = 'Покемон'

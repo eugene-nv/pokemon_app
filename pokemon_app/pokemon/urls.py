@@ -10,6 +10,6 @@ urlpatterns = [
     path('pokemon/<int:pk>/delete/', PokemonDeleteView.as_view(), name='delete_pokemon'),
     path('create/', create_pokemon, name='create'),
     path('create_first_pokemon/', create_first_pokemon, name='create_first_pokemon'),
-
+    path('test', test, name='test'),
 
 ]

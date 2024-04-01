@@ -14,6 +14,19 @@ app.autodiscover_tasks()
 
 @app.task()
 def task():
-    from arena.servises.servises import ForTask
-    t = ForTask()
-    t.run()
+    from arena.servises.system import ArenaSystem
+    t = ArenaSystem()
+    t.start()
+
+
+
+# @app.task()
+# def task():
+#     from arena.servises.servises import ForTask
+#     t = ForTask()
+#     try:
+#         t.run()
+#     except:
+#         'something'
+
+

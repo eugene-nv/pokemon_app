@@ -3,7 +3,6 @@ from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView
 
 from .models import Arena, Log
-from .servises.servises import ForTask
 
 
 class ArenaView(ListView):
@@ -26,9 +25,3 @@ def show_battle_result(request, battle_id):
     return render(request, 'arena/battle_result.html', context=context)
 
 
-def battle_test(request):
-
-    test = ForTask()
-    test.run()
-
-    return render(request, 'arena/battle.html')

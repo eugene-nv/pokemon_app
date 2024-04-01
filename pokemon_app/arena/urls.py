@@ -11,5 +11,4 @@ from .views import *
 urlpatterns = [
     path('', ArenaView.as_view(), name="arena"),
     path('battle-result/<int:battle_id>/', show_battle_result, name='show_battle_result'),
-    path('test', battle_test, name='test'),
 ]
